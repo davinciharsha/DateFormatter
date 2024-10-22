@@ -22,7 +22,7 @@ namespace DateFormatter
             Console.WriteLine("Enter number of days to be added to the given date.");
             string daysToAdd = Console.ReadLine();
 
-            string updatedDate = DateOperations.InitialValidation(datetime, daysToAdd);
+            string updatedDate = DateOperations.InitialValidationAndAddDays(datetime, daysToAdd);
             Console.WriteLine($"Updated date = {updatedDate}");
 
         }
@@ -31,10 +31,12 @@ namespace DateFormatter
 
     public class DateOperations
     {
-        public static string InitialValidation(string datetime, string daysToAdd)
+        public static string InitialValidationAndAddDays(string datetime, string daysToAdd)
         {
 
             DateTime dateTime;
+
+            #region basic validations
 
             try
             {
@@ -56,6 +58,13 @@ namespace DateFormatter
                 throw new InvalidCastException($"Invalid number of days entered. {daysToAdd}");
             }
 
+            if (addDays < 0)
+            {
+                throw new Exception($"Not supporting subtraction of days. Hence {daysToAdd} is invalid");
+            }
+
+            #endregion basic validations
+
             return AddDays(dateTime, addDays);
         }
 
@@ -65,7 +74,6 @@ namespace DateFormatter
             int[] daysInMonths = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
             // splitting received date into day, month and year
-
             int day = date.Day;
             int month = date.Month;
             int year = date.Year;
@@ -80,6 +88,7 @@ namespace DateFormatter
 
             // checking if the days crossed the maximum days in month
             // 28th in march + 5 days = 33, but maximum days in march are 31. so 33-31 = 2 of april
+            // while loop instead of if so that it can handle more than 30 day scenarios..
             while (day > daysInMonths[month - 1])
             {
                 day = day - daysInMonths[month - 1];
@@ -103,6 +112,7 @@ namespace DateFormatter
         }
 
     }
+
 }
 
 
