@@ -18,7 +18,7 @@ Before you begin, ensure that you have the following installed on your machine:
 To get started, clone the repository:
 git clone https://github.com/davinciharsha/DateFormatter.git
 
-Then, switch to the feature branch:
+Then, switch to the **master** branch:
 git checkout **master** and ensure you are on latest commit.
 
 
