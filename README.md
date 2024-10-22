@@ -4,8 +4,9 @@
 
 Date Formatter is a console application that performs **Date Operations** without relying on Microsoft or third-party libraries. The primary functionality of this application is to add a specified number of days to a given date and return the updated date.
 
-## Usage
-Please note that **Date Operations** is a subset of **Date Formatter**, new operations like subtraction and date conversions to IST, UTC and GMT etc will further be added as the application evolves.
+## Note
+Please note that **Date Operations** is a subset of **Date Formatter**, new operations like subtraction and date conversions to IST, UTC and GMT etc can be further be added.
+For the interview purpose, application is designed to be a **console app**. Can also make this entirely as a **class library and generate a nuget package** which can be installed and **InitialValidationAndAddDays** method  can be seamlessly integrated to perform addition of days to a particular date.
 
 ## Prerequisites
 
