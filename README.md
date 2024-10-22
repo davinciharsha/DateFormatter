@@ -19,7 +19,7 @@ To get started, clone the repository:
 git clone https://github.com/davinciharsha/DateFormatter.git
 
 Then, switch to the feature branch:
-git checkout **feature/IncrementDateWithoutDateLibraries**
+git checkout **master** and ensure you are on latest commit.
 
 
 ## Running the Tests
