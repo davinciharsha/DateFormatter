@@ -2,9 +2,7 @@
 
 namespace DateFormatter
 {
-
-    // keeping public so that I can test
-    public class Program
+    internal class Program
     {
         static void Main(string[] args)
         {

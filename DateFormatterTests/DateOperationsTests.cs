@@ -53,7 +53,7 @@ namespace DateFormatterTests
 
         // validation scenarios
         [Theory]
-        [InlineData(null, "30")] // string
+        [InlineData(null, "30")] // null
         public void InitialValidation_InvalidDateFormat_ShouldThrowException(string inputDate, string daysToAdd)
         {
             var exception = Assert.Throws<Exception>(() => DateOperations.InitialValidationAndAddDays(inputDate, daysToAdd));
